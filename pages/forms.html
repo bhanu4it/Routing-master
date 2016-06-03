@@ -1,0 +1,25 @@
+<h1>FORM PAGE</h1>
+
+<form action="" name="naren" method="post" >
+USER NAME:<input type="text" name="user" ng-model="fm.name" required><span ng-if="naren.user.$invalid && naren.user.$dirty">Enter Name</span><br><br>
+EMAIL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:<input type="email" name="mail" ng-model="fm.email" required><span ng-if="naren.mail.$invalid && naren.mail.$dirty">Enter Email</span><br><br>
+PHONE :<input type="text" name="pswd" ng-model="fm.phone" required><span ng-if="naren.pswd.$invalid && naren.pswd.$dirty">Enter Password</span><br><br>
+<input type="button" value="submit" ng-disabled="naren.$invalid" ng-click="submitdata()">
+
+</form>
+
+{{ output }}
+<table width="100%" border="1">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Actions</th>
+  </tr>
+  <tr ng-repeat="ars in nare">
+    <td>{{ars.name}}</td>
+    <td>{{ars.email}}</td>
+    <td>{{ars.phone}}</td>
+    <td> <a href="#/edituser/{{ars.email}}">edit user </a><button ng-click="deleteuser(ars.email);">Delete</button></td>
+  </tr>
+</table>
